@@ -41,7 +41,7 @@ do
                 echo "******Disable SSH? ******"
                 select yn in "Yes" "No"; do
                 case $yn in
-                Yes ) $(systemctl stop sshd); echo "SSH Service Stopped, Please disconnect from SSH"; exit;;
+                Yes ) $(systemctl disable sshd && systemctl stop sshd); echo "SSH Service Disabled and Stopped, Please disconnect from SSH"; exit;;
                 No ) exit;;
                 esac
                 done
