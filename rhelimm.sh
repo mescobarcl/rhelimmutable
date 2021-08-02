@@ -38,7 +38,7 @@ do
                 echo "******Veeam Process Detected continuing...******"
                 echo "******Denying SSH /etc/ssh/sshd_config entry******"
                 echo "DenyUsers repouser" >> /etc/ssh/sshd_config
-                echo "******Disable SSH? ******"
+                echo "******Disable SSH? Enter 1 for YES or 2 for NO******"
                 select yn in "Yes" "No"; do
                 case $yn in
                 Yes ) $(systemctl disable sshd && systemctl stop sshd); echo "SSH Service Disabled and Stopped, Please disconnect from SSH"; exit;;
